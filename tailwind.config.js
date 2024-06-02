@@ -1,14 +1,14 @@
 /** @type {import('tailwindcss').Config} */
+const colors = require("tailwindcss/colors");
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  darkMode: "class",
   theme: {
     colors: {
-      greyishh:"#0d1616"
+      ...colors,
+      darkblue:"#00072D",
     },
   },
   plugins: [],
-}
+};
 
