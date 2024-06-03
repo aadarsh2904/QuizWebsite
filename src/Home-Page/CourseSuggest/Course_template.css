@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Merriweather:wght@400;700&display=swap");
+
+#shop {
+  background: linear-gradient(#449898 54%, #163232 100%);
+  width: 80%;
+  margin: 1rem auto;
+  border-radius: 10px;
+}
+
+#shop h2 {
+  font-family: joti;
+  font-size: 2rem;
+  margin-left: 2rem;
+  margin-top: 2rem;
+  color: #1c0b0b;
+  text-transform: uppercase;
+  background-color: "rgb(14, 32, 32)";
+  width: "fit-content";
+}
+.ShowMore {
+  text-align: center;
+
+  font-family: "Merriweather", serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fbd392;
+  background-color: #5f4e33;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-left: 50%;
+}
+#products {
+  list-style: none;
+  margin: 2rem;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 1rem;
+}
+
+.product {
+  height: 100%;
+  background: #5f4e33;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.product img {
+  width: 100%;
+  border-radius: 6px;
+}
+
+.product-content {
+  flex: 1;
+  font-family: "Merriweather", serif;
+  padding: 0 1rem 0.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.product-content h3 {
+  font-size: 1.5rem;
+  font-family: "Merriweather", serif;
+  color: #fbd392;
+  margin-bottom: 0.15rem;
+}
+
+.product-price {
+  font-size: 1rem;
+  font-family: "Merriweather", serif;
+  color: #d1b68b;
+  margin: 0;
+}
+
+.product-actions {
+  font-family: "Merriweather", serif;
+  text-align: right;
+}
+
+.product-actions button {
+  background: #f4b115;
+  font-family: "Merriweather", serif;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  color: #201e1a;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.product-actions button:hover {
+  background: #f5b744;
+}
