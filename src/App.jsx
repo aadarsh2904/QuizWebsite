@@ -1,11 +1,14 @@
-import Navbar from "./Home-Page/Navbar";
-import Course_rec from "./Home-Page/CourseSuggest/Course_rec";
-
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home-Page/HomePage';
 export default function App() {
   return (
-    <>
-      <Navbar />
-      <Course_rec />
+   <>
+       <Router>
+        <Routes>
+          <Route path ='/' element={<Home/>}/>
+        </Routes>
+       </Router>
     </>
   );
 }

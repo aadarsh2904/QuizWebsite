@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import Course_template from "./Course_template";
-import { DUMMY_DATA } from "../../Dummy_course_data";
+import { DUMMY_DATA } from '../../../Dummy_course_data'
 import "./Course_template.css";
 export default function Course_rec() {
   return (
