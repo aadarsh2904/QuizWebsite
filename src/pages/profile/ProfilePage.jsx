@@ -7,13 +7,11 @@ import Recent from './Recent.jsx'
 export default function ProfilePage() {
   return (
     <>
-     
-    
      <Navbar/>
-    <Details/>
-    <Recent/>
-    <Footer/>
- 
+     <Details/>
+     <CourseList/>
+     <Recent/>
+     <Footer/>
 
   
     </>

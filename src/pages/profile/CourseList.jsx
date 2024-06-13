@@ -1,81 +1,110 @@
-import React, { useState } from 'react';
+import React from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
-const Carousel = () => {
-  const photos = [
+// Import images from the assets folder
+import photo1 from '../../assets/dummy_pic3.jpg';
+ 
+function SampleNextArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={`${className} bg-black text-black rounded-full p-2 shadow-md hover:bg-black hover:text-black focus:bg-black focus:text-black`}
+      style={{ ...style, display: "flex", alignItems: "center", justifyContent: "center" }}
+      onClick={onClick}
+    >
+      <svg
+        className="w-6 h-6"
+        fill="currentColor"
+        viewBox="0 0 20 20"
+      >
+        <path fillRule="evenodd" d="M10.293 15.707a1 1 0 010-1.414L13.586 11H4a1 1 0 110-2h9.586l-3.293-3.293a1 1 0 011.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z" clipRule="evenodd" />
+      </svg>
+    </div>
+  );
+}
+
+function SamplePrevArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={`${className} bg-black text-black rounded-full p-2 shadow-md hover:bg-black hover:text-black focus:bg-black focus:text-black`}
+      style={{ ...style, display: "flex", alignItems: "center", justifyContent: "center" }}
+      onClick={onClick}
+    >
+      <svg
+        className="w-6 h-6"
+        fill="currentColor"
+        viewBox="0 0 20 20"
+      >
+        <path fillRule="evenodd" d="M9.707 4.293a1 1 0 010 1.414L6.414 9H16a1 1 0 110 2H6.414l3.293 3.293a1 1 0 01-1.414 1.414l-5-5a1 1 0 010-1.414l5-5a1 1 0 011.414 0z" clipRule="evenodd" />
+      </svg>
+    </div>
+  );
+}
+
+function CourseSlider() {
+  const data = [
     {
-      src: 'https://via.placeholder.com/400x200?text=First+Slide',
-      alt: 'First slide',
-      description: 'This is the first slide description',
+      photo: photo1,
+      name: "Course 1",
+      instructor: "Instructor 1"
     },
     {
-      src: 'https://via.placeholder.com/400x200?text=Second+Slide',
-      alt: 'Second slide',
-      description: 'This is the second slide description',
+      photo: photo1,
+      name: "Course 2",
+      instructor: "Instructor 2"
     },
     {
-      src: 'https://via.placeholder.com/400x200?text=Third+Slide',
-      alt: 'Third slide',
-      description: 'This is the third slide description',
+      photo: photo1,
+      name: "Course 3",
+      instructor: "Instructor 3"
     },
     {
-      src: 'https://via.placeholder.com/400x200?text=Fourth+Slide',
-      alt: 'Fourth slide',
-      description: 'This is the fourth slide description',
+      photo: photo1,
+      name: "Course 4",
+      instructor: "Instructor 4"
     },
     {
-      src: 'https://via.placeholder.com/400x200?text=Fifth+Slide',
-      alt: 'Fifth slide',
-      description: 'This is the fifth slide description',
+      photo: photo1,
+      name: "Course 5",
+      instructor: "Instructor 5"
     },
+    {
+      photo: photo1,
+      name: "Course 6",
+      instructor: "Instructor 6"
+    }
   ];
 
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const goToPrevious = () => {
-    const isFirstSlide = currentIndex === 0;
-    const newIndex = isFirstSlide ? Math.ceil(photos.length / 3) - 1 : currentIndex - 1;
-    setCurrentIndex(newIndex);
-  };
-
-  const goToNext = () => {
-    const isLastSlide = currentIndex === Math.ceil(photos.length / 3) - 1;
-    const newIndex = isLastSlide ? 0 : currentIndex + 1;
-    setCurrentIndex(newIndex);
+  const settings = {
+    dots: true,
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />
   };
 
   return (
-    <div className="relative w-full max-w-5xl mx-auto">
-      <div className="overflow-hidden relative h-80">
-        <div
-          className="flex transition-transform duration-500"
-          style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-        >
-          {photos.map((photo, index) => (
-            <div key={index} className="w-1/3 flex-shrink-0 p-2">
-              <img src={photo.src} alt={photo.alt} className="w-full h-40 object-cover" />
-              <div className="p-2 text-center bg-gray-800 text-white">
-                {photo.description}
+    <div className="container mx-auto p-4 w-5/6 -mt-36">
+      <h2 className="text-2xl font-bold text-center mb-4">Your Courses</h2>
+      <Slider {...settings}>
+        {data.map((course, index) => (
+          <div key={index} className="p-4">
+            <div className="bg-white rounded-lg shadow-md overflow-hidden">
+              <img src={course.photo} alt={course.name} className="w-full h-56 object-cover" />
+              <div className="p-4">
+                <h3 className="text-lg font-semibold">{course.name}</h3>
+                <p className="text-gray-600">{course.instructor}</p>
               </div>
             </div>
-          ))}
-        </div>
-      </div>
-      <div className="absolute top-4 right-4 flex flex-col">
-        <button
-          onClick={goToPrevious}
-          className="bg-gray-800 text-white p-2 rounded-full mb-2"
-        >
-          &#10094;
-        </button>
-        <button
-          onClick={goToNext}
-          className="bg-gray-800 text-white p-2 rounded-full"
-        >
-          &#10095;
-        </button>
-      </div>
+          </div>
+        ))}
+      </Slider>
     </div>
   );
-};
+}
 
-export default Carousel;
+export default CourseSlider;

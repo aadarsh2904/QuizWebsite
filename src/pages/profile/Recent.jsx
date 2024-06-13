@@ -8,7 +8,7 @@ export default function Recent() {
   ];
 
   return (
-    <div className="bg-green-800 p-4 rounded-lg shadow-md w-4/5 mx-auto -mt-24 mb-16">
+    <div className="bg-green-800 p-4 rounded-lg shadow-md w-4/5 mx-auto mt-12 mb-16">
       <h2 className="text-white text-lg font-bold mb-4">Recently Attempted Quiz</h2>
       <div className="space-y-2">
         {quizzes.map((quiz, index) => (
