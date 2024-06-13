@@ -13,7 +13,7 @@ export default function Recent() {
       <div className="space-y-2">
         {quizzes.map((quiz, index) => (
           <div key={index} className="flex justify-between items-center bg-green-900 text-white p-2 rounded-md">
-            <span>{index + 1}) {quiz.name}</span>
+            <span>{index + 1} {quiz.name}</span>
             <span>{quiz.date}</span>
           </div>
         ))}

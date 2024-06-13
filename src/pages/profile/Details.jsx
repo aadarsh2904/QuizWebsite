@@ -50,8 +50,9 @@ export default function Details() {
           }
         `}
       </style>
-
-      <div className="flex justify-center items-center min-h-screen transparent-container -mt-20">
+      <h2 className="text-2xl font-bold text-center mb-4 font-serif mt-10">Profile</h2>
+      <div className="flex justify-center items-center min-h-screen transparent-container -mt-32">
+        
         <div className="ml-32 flex">
           <div className="w-1/3 p-4 rounded shadow flex-shrink-0">
             <img src={ProfileImage} alt="Profile" className="w-full rounded" />
