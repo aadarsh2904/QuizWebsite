@@ -1,5 +1,5 @@
 import { FaSearch } from "react-icons/fa";
-
+import { Link } from "react-router-dom";
 function Navbar() {
   return (
     <header>
@@ -31,11 +31,9 @@ function Navbar() {
           />
         </div>
 
-        <div
-          className="ml-6 mt-1 flex items-center justify-center h-11 w-12 rounded-full "
-          style={{ backgroundColor: "rgb(217, 223, 149)" }}
-        >
-          <span className="font-joti text-2lx font-bold text-black">AJ</span>
+        <div className="mt-3 ml-20">
+          
+          <span className="font-joti text-xl font-bold text-white hover:text-lg"><Link to="/sign-in">Login</Link></span>
         </div>
       </nav>
     </header>
